@@ -25,6 +25,7 @@ const Modal: React.FC<ModalProps> = ({ videoSrc }) => {
         <video
           ref={videoRef}
           src={videoSrc}
+          controls
           autoPlay
           loop
           muted

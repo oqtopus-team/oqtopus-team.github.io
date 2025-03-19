@@ -7,13 +7,9 @@ import Modal from "../components/Modal";
 
 // images
 import mainVisualBackground from '../assets/img/top/mv_bg.png';
-import mainVisualText01 from '../assets/img/top/mv_text01.svg';
-import mainVisualText02 from '../assets/img/top/mv_text02.svg';
-import mainVisualText03 from '../assets/img/top/mv_text03.svg';
 import aboutImg01 from '../assets/img/top/about_img01.jpg';
 import softwareChart from '../assets/img/top/software_chart.svg';
 import roadmapImg01 from '../assets/img/top/roadmap_img01.jpg';
-import demoImg01 from '../assets/img/top/demo_img01.jpg';
 import productsImg01 from '../assets/img/top/products_img01.jpg';
 import communityLogoGithub from '../assets/img/top/community_logo_github.png';
 import communityLogoSlack from '../assets/img/top/community_logo_slack.png';
@@ -677,10 +673,11 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 				padding-top: 15rem;
 			}
 			&__chart {
-				width: 100vw;
+				// width: 100vw;
 				padding-bottom: 1rem;
-				margin: 4.6rem 0 3.3rem -2.4rem;
-				overflow: auto;
+				// margin: 4.6rem 0 3.3rem -2.4rem;
+				margin: 4.6rem 0 3.3rem;
+				// overflow: auto;
 				@include m.mq() {
 					width: 100%;
 					padding-bottom: 0;
@@ -690,10 +687,11 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 					margin: 2.2rem 0 4rem;
 				}
 				img {
-					max-width: none;
-					width: 81.4rem;
-					margin-left: 2.4rem;
-					margin-right: 2.4rem;
+					width: 100%;
+					// max-width: none;
+					// width: 81.4rem;
+					// margin-left: 2.4rem;
+					// margin-right: 2.4rem;
 					@include m.mq() {
 						width: 100%;
 						margin: 0;

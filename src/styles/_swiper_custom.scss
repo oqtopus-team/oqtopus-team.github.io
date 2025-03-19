@@ -1,0 +1,221 @@
+@use "_mixin.scss" as m;
+@use "_var.scss" as var;
+
+.p-top {
+  // swiperのカスタム
+  .p-top__roadmap, .p-top__demo {
+    .swiper-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: -4.2rem;
+      gap: 2rem;
+      @include m.mq() {
+        bottom: -7.1rem;
+      }
+      @include m.mq(tablet) {
+        bottom: -5.3rem;
+      }
+      .swiper-pagination-bullet {
+        width: 0.9rem;
+        height: 0.9rem;
+        margin: 0;
+        background: var.$gray;
+        opacity: 1;
+        transition: all 0.1s ease-out;
+        @include m.mq() {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+        @include m.mq(tablet) {
+          width: 1rem;
+          height: 1rem;
+        }
+        &.swiper-pagination-bullet-active {
+          background: var.$white;
+          transform: scale(2);
+        }
+      }
+    }
+    .swiper-button {
+      position: absolute;
+      top: 17.9rem;
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 9999px;
+      transition: opacity 0.1s ease-out;
+      @include m.mq() {
+        top: 14.9rem;
+        width: 7.5rem;
+        height: 7.5rem;
+      }
+      @include m.mq(tablet) {
+        top: 14.4rem;
+        width: 5.5rem;
+        height: 5.5rem;
+      }
+      &.swiper-button-disabled {
+        opacity: 0;
+      }
+      &.swiper-button-prev {
+        left: -3.5rem;
+        @include m.mq() {
+          left: -7.2rem;
+        }
+        .swiper-button-arrow {
+          background: var(--sliderArrowPrev) repeat-x 0 50%/4rem 0.8rem;
+          animation: bgroopreverse 40s linear infinite;			
+          @include m.mq() {
+            background-size: 6rem 1.2rem;
+          }
+          @include m.mq(tablet) {
+            background-size: 4rem 0.8rem;
+          }
+        }
+      }
+      &.swiper-button-next {
+        right: -3.5rem;
+        @include m.mq() {
+          right: -7.2rem;
+        }
+        @include m.mq(tablet) {
+          right: -5.7rem;
+        }
+        .swiper-button-arrow {
+          background: var(--sliderArrowNext) repeat-x 0 50%/4rem 0.8rem;
+          animation: bgroop 40s linear infinite;					
+          @include m.mq() {
+            background-size: 6rem 1.2rem;
+          }		
+          @include m.mq(tablet) {
+            background-size: 4rem 0.8rem;
+          }
+        }
+      }
+      &::before, &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+      }
+      &::before {
+        top: -0.3rem;
+        left: -0.1rem;
+        background-color: var.$blue;
+        mix-blend-mode: multiply;
+        z-index: 2;
+      }
+      &::after {
+        right: -0.3rem;
+        bottom: -0.3rem;
+        background-color: var.$red;
+        z-index: 1;
+      }
+      .swiper-button-arrow {
+        position: absolute;
+        top: 0.2rem;
+        left: 0.3rem;
+        width: 5.1rem;
+        height: 5.1rem;
+        border-radius: 9999px;
+        z-index: 3;
+        background-size: 4rem 0.8rem;
+        background-position: 0 50%;
+        @include m.mq() {
+          top: 0.2rem;
+          left: 0.4rem;
+          width: 7rem;
+          height: 7rem;
+        }
+        @include m.mq(tablet) {
+          top: 0.1rem;
+          left: 0.3rem;
+          width: 5.1rem;
+          height: 5.1rem;
+        }
+      }
+      .swiper-button-circle {
+        position: absolute;
+        top: -1.9rem;
+        right: -1.8rem;
+        display: block;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 9999px;
+        background-color: var.$blue;
+        z-index: 4;
+        @include m.mq() {
+          top: -2.3rem;
+          right: -2.1rem;
+          width: 4.5rem;
+          height: 4.5rem;
+        }
+        @include m.mq(tablet) {
+          top: -1.8rem;
+          right: -1.7rem;
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+    }						
+  }
+  .p-top__demo {
+    .swiper-button {
+      top: 18.1rem;
+      @include m.mq() {
+        top: 35.8rem;
+      }
+      @include m.mq(tablet) {
+        top: 27.4rem;
+      }
+      &.swiper-button-prev {
+        left: 0.6rem;
+        @include m.mq() {
+          left: calc(50% - 37.3vw);
+        }
+        @include m.mq(tablet) {
+          left: calc(50% - 40.3vw);
+        }
+      }
+      &.swiper-button-next {
+        right: 0.6rem;
+        @include m.mq() {
+          right: calc(50% - 37.3vw);
+        }
+        @include m.mq(tablet) {
+          right: calc(50% - 40.3vw);
+        }
+      }
+    }
+    .swiper-pagination {
+      bottom: 0;
+      // bottom: -6.8rem;
+      // @include m.mq() {
+      //   bottom: -11.2rem;
+      // }
+      // @include m.mq(tablet) {
+      //   bottom: -8.5rem;
+      // }
+    }				
+  }
+}
+
+@keyframes bgroop {
+  from {
+      background-position: -2000px 50%;
+  }
+  to {
+      background-position: 0 50%;
+  }
+}
+@keyframes bgroopreverse {
+  from {
+      background-position: 0 50%;
+  }
+  to {
+      background-position: -2000px 50%;
+  }
+}

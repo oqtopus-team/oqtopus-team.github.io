@@ -1,0 +1,36 @@
+@use "_mixin.scss" as m;
+@use "_var.scss" as var;
+
+// 共通のレイアウト用のcssを記述するファイル
+// ※headerとfooterのcssは/src/components/Header.astro と /src/components/Footer.astro にそれぞれ記述してます
+
+.l-container {
+  width: 100%;
+  overflow: hidden;
+}
+.l-contents {
+  padding-top: 20rem;
+  padding-bottom: 10rem;
+  @include m.mq() {
+    padding-top: 37rem;
+    padding-bottom: 20rem;
+  }
+  @include m.mq(tablet) {
+    padding-top: 26.5rem;
+    padding-bottom: 15rem;
+  }
+  &.--pt0 {
+    padding-top: 0;
+  }
+}
+.l-section {
+  position: relative;
+}
+.l-inner {
+  max-width: 1080px;
+  width: 87%;
+  margin: auto;
+  @include m.mq(tablet) {
+    width: 80%;
+  }
+}

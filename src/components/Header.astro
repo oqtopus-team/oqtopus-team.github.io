@@ -1,0 +1,200 @@
+---
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
+
+// images
+import headerLogo from '../assets/img/common/header_logo.svg';
+
+// background-images
+import headerMenuBackgroundSrc from '../assets/img/common/header_menu_bg.png';
+const headerMenuBackground = await getImage({src: headerMenuBackgroundSrc});
+
+const isTopPage = Astro.url.pathname === '/';
+---
+<header class="l-header">
+  <div class="l-header__logo">
+    <a href="/">
+      <Image src={headerLogo} alt="OQTOPUS" />
+    </a>
+  </div>
+  <button class="l-header__menu-button u-sp" id="headerMenuButton">
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="l-header__nav" id="headerMenu" data-isopened="false">
+    <ul class="l-header__nav__list">
+      <li class="l-header__nav__list__item">
+        <a href={isTopPage ? "#mission" : "/#mission"} class="l-header__link">Our mission</a>
+      </li>
+      <li class="l-header__nav__list__item">
+        <a href={isTopPage ? "#about" : "/#about"} class="l-header__link">About OQTOPUS</a>
+      </li>
+      <li class="l-header__nav__list__item">
+        <a href={isTopPage ? "#software" : "/#software"} class="l-header__link">Software stack</a>
+      </li>
+      <li class="l-header__nav__list__item">
+        <a href={isTopPage ? "#roadmap" : "/#roadmap"} class="l-header__link">Roadmap</a>
+      </li>
+      <li class="l-header__nav__list__item">
+        <a href={isTopPage ? "#demo" : "/#demo"} class="l-header__link">Demo</a>
+      </li>
+      <li class="l-header__nav__list__item">
+        <a href={isTopPage ? "#products" : "/#products"} class="l-header__link">Products</a>
+      </li>
+      <li class="l-header__nav__list__item">
+        <a href={isTopPage ? "#community" : "/#community"} class="l-header__link">Community</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss" define:vars={{ menuBg: `url(${headerMenuBackground.src})` }}>
+	.l-header {
+		// position: fixed;
+		// top: 0;
+		// left: 0;
+		width: 100%;
+		// padding: 0 2.2rem;
+		z-index: 10;
+		@include m.mq() {
+			display: flex;
+			align-items: center;
+			gap: 0 4rem;
+			// padding: 0 5.7rem;
+		}
+		&__logo {
+			// position: relative;
+			position: fixed;
+			top: 0;
+			left: 2.2rem;
+			width: 9.9rem;
+			z-index: 10;
+			@include m.mq() {
+        width: 16.3rem;
+				left: 5.7rem;
+			}
+			@include m.mq(tablet) {
+        left: 5.8rem;
+        width: 11.2rem;
+			}
+		}
+		&__menu-button {
+			position: fixed;
+			top: 1.6rem;
+			right: 0.8rem;
+			width: 5rem;
+			height: 5rem;
+			z-index: 11;
+			span {
+				position: absolute;
+				right: 0;
+				left: 0;
+				width: 76%;
+				height: 0.3rem;
+				margin: auto;
+				background: var.$white;
+				transition: all 0.3s ease-out;
+				&:first-child {
+					top: 1.3rem;
+				}
+				&:last-child {
+					bottom: 1.3rem;
+				}
+			}
+			&.is-active {
+				span {
+					&:first-child {
+						top: 2.3rem;
+						transform: rotate(35deg);
+					}
+					&:last-child {
+						bottom: 2.3rem;
+						transform: rotate(-35deg);
+					}
+				}
+			}
+		}
+		&__nav {
+			@include m.mq(sp) {
+				display: block;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				height: 100dvh;
+				padding: 14.7rem 5.3rem 0;
+				background-image: var(--menuBg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				background-color: var.$black;
+				z-index: 9;
+				opacity: 1;
+				transition-property: display, opacity;
+				transition-behavior: allow-discrete;
+				transition-duration: 0.3s;
+				transition-timing-function: ease-out;
+				overflow: auto;
+				@starting-style {
+					opacity: 0;
+				}
+				&[data-isopened="false"] {
+					display: none;
+					opacity: 0;
+				}
+				// &.is-active {
+				// 	opacity: 1;
+				// }
+			}
+			@include m.mq() {
+				position: fixed;
+				top: 0;
+        left: 25.8rem;
+				display: flex;
+				align-items: center;
+				width: calc(100% - 29rem);
+				height: 17.3rem;
+				mix-blend-mode: difference;
+				transform:translate3d(0,0,0);
+				z-index: 9;
+			}
+			@include m.mq(tablet) {
+				left: 18.8rem;
+        width: calc(100% - 21rem);
+				height: 11.9rem;
+			}
+			&__list {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 1rem 0;
+				padding-bottom: 5rem;
+				@include m.mq() {
+					width: 100%;
+					justify-content: center;
+					gap: 1rem 3.5rem;
+					padding-bottom: 0;
+				}
+				@include m.mq(tablet) {
+					gap: 1rem 1.5rem;
+				}
+				&__item {
+					width: 100%;
+					font-size: 3.1rem;
+					font-weight: 400;
+					letter-spacing: 0.04em;
+					@include m.mq() {
+						position: relative;
+						width: auto;
+						font-size: 2.2rem;
+						mix-blend-mode: difference;
+					}
+					@include m.mq(tablet) {
+						font-size: 1.4rem;
+					}
+				}
+			}
+		}
+	}
+</style>

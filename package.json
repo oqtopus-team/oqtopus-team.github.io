@@ -4,11 +4,21 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "devh": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.4.2"
+    "@astrojs/react": "^4.2.1",
+    "@lottiefiles/react-lottie-player": "^3.6.0",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "astro": "^5.4.2",
+    "astro-integration-lottie": "^0.3.2",
+    "gsap": "^3.12.7",
+    "lottie-web": "^5.12.2",
+    "sass": "^1.85.1",
+    "smoothscroll-polyfill": "^0.4.4",
+    "swiper": "^11.2.5"
   }
 }

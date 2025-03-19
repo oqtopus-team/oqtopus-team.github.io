@@ -1,11 +1,1114 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import Modal from "../components/Modal";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// images
+import mainVisualBackground from '../assets/img/top/mv_bg.png';
+import mainVisualText01 from '../assets/img/top/mv_text01.svg';
+import mainVisualText02 from '../assets/img/top/mv_text02.svg';
+import mainVisualText03 from '../assets/img/top/mv_text03.svg';
+import aboutImg01 from '../assets/img/top/about_img01.jpg';
+import softwareChart from '../assets/img/top/software_chart.svg';
+import roadmapImg01 from '../assets/img/top/roadmap_img01.jpg';
+import demoImg01 from '../assets/img/top/demo_img01.jpg';
+import productsImg01 from '../assets/img/top/products_img01.jpg';
+import communityLogoGithub from '../assets/img/top/community_logo_github.png';
+import communityLogoSlack from '../assets/img/top/community_logo_slack.png';
+
+// background-images
+import roadmapBackgroundPcSrc from '../assets/img/top/roadmap_bg_pc.png';
+const roadmapBackgroundPc = await getImage({src: roadmapBackgroundPcSrc});
+import roadmapBackgroundSpSrc from '../assets/img/top/roadmap_bg_sp.png';
+const roadmapBackgroundSp = await getImage({src: roadmapBackgroundSpSrc});
+import arrowSrc from '../assets/img/top/arrow.svg';
+const arrow = await getImage({src: arrowSrc});
+import sliderArrowNextSrc from '../assets/img/top/arrow_slider_next.svg';
+const sliderArrowNext = await getImage({src: sliderArrowNextSrc});
+import sliderArrowPrevSrc from '../assets/img/top/arrow_slider_prev.svg';
+const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 ---
 
 <Layout>
-	<Welcome />
+	<div class="p-top">
+		<section class="l-section p-top__main-visual" id="mainVisual">
+			<Image src={mainVisualBackground} alt="" class="p-top__main-visual__bg" />
+			<h1 class="p-top__main-visual__head u-font-source-serif">
+				HELLO,<br>I AM<br>OQTOPUS
+			</h1>
+		</section><!-- /.p-top__main-visual -->
+
+		<section class="l-section p-top__mission" id="mission">
+			<div class="l-inner">
+				<div class="p-top__mission__block u-color-black">
+					<div class="p-top__mission__bg"></div>
+					<div class="p-top__mission__contents">
+						<div class="p-top__mission__animation">
+							<LottieAnimation src="/json/animation.json" autoplay="visible" />
+						</div><!-- /.p-top__mission__animation -->
+						<h2 class="p-top__head p-top__mission__head u-color-blue">Our mission</h2>
+						<p class="p-top__mission__text">
+							We will form an open community <br class="u-pc">for quantum computer system software <br class="u-pc">and promote future technological innovation.
+						</p>
+						<p class="p-top__mission__note">
+							Open sourcing will make it easier for various research institutes and companies to participate in quantum computer development, and is expected to promote technological innovation and community formation.
+						</p>
+						<div class="c-button-area p-top__mission__button-area">
+							<a href="" class="c-button --center">
+								<span class="c-button__text">Find out more</span>
+								<span class="c-button__circle01"></span>
+								<span class="c-button__circle02"></span>
+							</a>
+						</div><!-- /.c-button-area -->	
+					</div><!-- /.p-top__mission__contents  -->
+				</div><!-- /.p-top__mission__block -->
+			</div><!-- /.l-inner -->
+		</section><!-- /.p-top__mission -->
+
+		<section class="l-section p-top__about" id="about">
+			<div class="l-inner">
+				<h2 class="p-top__about__head p-top__head u-color-red js-typing">About OQTOPUS</h2>
+				<h3 class="p-top__about__sub-head p-top__sub-head js-typing">to open source all the system software needed <br>for quantum computers.</h3>
+				<p class="p-top__about__large-text p-top__large-text">Dummy text Dummy text Dummy text Dummy</p>
+				<ul class="p-top__list">
+					<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+					<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+					<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+				</ul>
+				<div class="p-top__about__flexbox --first">
+					<div class="p-top__about__flexbox__block">
+						<Image src={aboutImg01} alt="" />
+					</div><!-- /.p-top__about__flexbox__block -->
+					<div class="p-top__about__flexbox__block">
+						<Image src={aboutImg01} alt="" />
+					</div><!-- /.p-top__about__flexbox__block -->
+					<div class="p-top__about__flexbox__block">
+						<Image src={aboutImg01} alt="" />
+					</div><!-- /.p-top__about__flexbox__block -->
+					<div class="p-top__about__flexbox__block">
+						<ul class="p-top__list">
+							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+						</ul>
+					</div><!-- /.p-top__about__flexbox__block -->
+				</div><!-- /.p-top__about__flexbox.--first -->
+				<p class="p-top__large-text">Dummy text Dummy text Dummy text Dummy</p>
+				<div class="p-top__about__flexbox --second">
+					<div class="p-top__about__flexbox__block">
+						<ul class="p-top__list">
+							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+						</ul>
+					</div><!-- /.p-top__about__flexbox__block -->
+					<div class="p-top__about__flexbox__block">
+						<ul class="p-top__list">
+							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+						</ul>
+					</div><!-- /.p-top__about__flexbox__block -->
+				</div><!-- /.p-top__about__flexbox -->
+
+				<p class="p-top__large-text u-break-all text-justify u-mb10"><span class="underline">To systemize a quantum computer, a variety of functions are required, <br class="u-pc">including the following features:</span>	</p>
+				<ul class="p-top__number-list">
+					<li class="p-top__number-list__item"><span>1.</span>Job Management and Scheduling: Quantum computers are expensive and, like supercomputers, are commonly shared by multiple users. Therefore, a mechanism for managing user jobs and scheduling execution timing is essential.</li>
+					<li class="p-top__number-list__item"><span>2.</span>Conversion and optimization of quantum programs: Programs created by users do not run directly on a quantum chip, and must be converted and optimized (equivalent to compiling on a conventional computer) according to the characteristics specific to the quantum chip.</li>
+					<li class="p-top__number-list__item"><span>3.</span>Calibration: Calibration of the microwave frequency is necessary to accurately control the quantum chip. The calibration process is a big part of quantum computer operations.</li>
+				</ul>
+			</div><!-- /.l-inner -->
+		</section><!-- /.p-top__about -->
+
+		<section class="l-section p-top__software" id="software">
+			<div class="l-inner">
+				<h2 class="p-top__head u-color-blue js-typing">Software stack</h2>
+				<div class="p-top__software__chart">
+					<Image src={softwareChart} alt= />
+				</div><!-- /.p-top__software__chart -->
+				<h4 class="p-top__software__large-text p-top__large-text u-break-all text-justify"><span class="underline">Each layer of OQTOPUS consists of the following software:</span></h4>
+				<p class="p-top__text">
+					[Front-end layer]<br>
+					■ QURI Parts OQTOPUS<br>
+					It converts user-written quantum programs into a generic format (OpenQASM3) and communicates with the cloud layer.	
+				</p>
+				<p class="p-top__text">
+					[Cloud layer]<br>
+					■ GUI<br>
+					Information such as the execution status and results of user-created quantum programs, as well as the accuracy of quantum chips, is provided through a Web screen.<br>
+					## OQTOPUS Cloud<br>
+					Responsible for data management functions for the entire system, as well as user management and job management.					
+				</p>
+				<p class="p-top__text">
+					[Backend layer]<br>
+					■ OQTOPUS Engine<br>
+					As an execution platform for quantum computation, it works with the cloud layer, Tranqu Server, and Device Gateway to execute quantum programs. It also performs various processes necessary for quantum computation, such as calculation of the expected value of the execution result and error suppression.					
+				</p>
+				<p class="p-top__text">
+					■ Tranqu<br>
+					It is a one-stop framework that supports multiple quantum programming libraries and quantum circuit transformation and optimization functions (transpilers).
+				</p>
+				<p class="p-top__text">
+					■ Tranqu Server<br>
+					It provides transpiler services using Tranqu and is used by OQTOPUS Engine.					
+				</p>
+				<p class="p-top__text">
+					[Operation]<br>
+					■ QDash<br>
+					It is a dashboard that executes calibration essential for operation as a workflow, and visualizes the history management of execution results.					
+				</p>
+			</div><!-- /.l-inner -->
+		</section><!-- /.p-top__software -->
+
+		<section class="l-section p-top__roadmap" id="roadmap">
+			<div class="l-inner">
+				<div class="p-top__roadmap__block">
+					<h2 class="p-top__head js-typing">Roadmap</h2>
+					<div class="swiper p-top__roadmap__slider" id="roadmapSwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide p-top__roadmap__slide">
+								<a href="" class="p-top__roadmap__slide__link">
+									<h3 class="p-top__roadmap__slide__head">Phase1</h3>
+									<p class="p-top__roadmap__slide__text u-break-all">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+									<span class="p-top__roadmap__slide__more">Learn more</span>
+									<Image src={roadmapImg01} alt="" class="p-top__roadmap__slide__img" />	
+								</a>
+							</div><!-- /.swiper-slide -->
+							<div class="swiper-slide p-top__roadmap__slide">
+								<a href="" class="p-top__roadmap__slide__link">
+									<h3 class="p-top__roadmap__slide__head">Phase2</h3>
+									<p class="p-top__roadmap__slide__text u-break-all">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+									<span  class="p-top__roadmap__slide__more">Learn more</span>
+									<Image src={roadmapImg01} alt="" class="p-top__roadmap__slide__img" />	
+								</a>
+							</div><!-- /.swiper-slide -->
+							<div class="swiper-slide p-top__roadmap__slide">
+								<a href="" class="p-top__roadmap__slide__link">
+									<h3 class="p-top__roadmap__slide__head">Phase3</h3>
+									<p class="p-top__roadmap__slide__text u-break-all">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+									<span  class="p-top__roadmap__slide__more">Learn more</span>
+									<Image src={roadmapImg01} alt="" class="p-top__roadmap__slide__img" />	
+								</a>
+							</div><!-- /.swiper-slide -->
+							<div class="swiper-slide p-top__roadmap__slide">
+								<a href="" class="p-top__roadmap__slide__link">
+									<h3 class="p-top__roadmap__slide__head">Phase4</h3>
+									<p class="p-top__roadmap__slide__text u-break-all">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+									<span  class="p-top__roadmap__slide__more">Learn more</span>
+									<Image src={roadmapImg01} alt="" class="p-top__roadmap__slide__img" />										
+								</a>
+							</div><!-- /.swiper-slide -->
+						</div><!-- /.swiper-wrapper -->
+						<div class="swiper-pagination"></div>
+						<div class="swiper-button swiper-button-prev">
+							<span class="swiper-button-arrow"></span>
+							<span class="swiper-button-circle"></span>
+						</div><!-- /.swiper-button -->
+						<div class="swiper-button swiper-button-next">
+							<span class="swiper-button-arrow"></span>
+							<span class="swiper-button-circle"></span>
+						</div><!-- /.swiper-button -->
+					</div><!-- /.swiper -->	
+				</div><!-- /.p-top__roadmap__block -->
+			</div><!-- /.l-inner -->
+		</section><!-- /.p-top__roadmap -->
+
+		<section class="l-section p-top__demo" id="demo">
+			<div class="l-inner">
+				<h2 class="p-top__head u-color-red js-typing">Demo</h2>
+				<div class="swiper p-top__demo__slider" id="demoSwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide p-top__demo__slide">
+							<div class="p-top__demo__slide__inner">
+								<div class="p-top__demo__slide__text-area">
+									<h3 class="p-top__demo__slide__head js-typing-slide">Dummy text</h3>
+									<p class="p-top__demo__slide__text p-top__text js-typing-slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+								</div><!-- /.p-top__demo__slide__text-area  -->
+								<div class="p-top__demo__slide__video">
+									<Modal videoSrc="/video/demo_video01.mp4" client:load />
+								</div><!-- /.p-top__demo__slide__video -->
+							</div><!-- /.p-top__demo__slide__inner -->
+						</div><!-- /.swiper-slide -->
+						<div class="swiper-slide p-top__demo__slide">
+							<div class="p-top__demo__slide__inner">
+								<div class="p-top__demo__slide__text-area">
+									<h3 class="p-top__demo__slide__head js-typing-slide">Dummy text</h3>
+									<p class="p-top__demo__slide__text p-top__text js-typing-slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+								</div><!-- /.p-top__demo__slide__text-area  -->
+								<div class="p-top__demo__slide__video">
+									<Modal videoSrc="/video/demo_video01.mp4" client:load />
+								</div><!-- /.p-top__demo__slide__video -->
+							</div><!-- /.p-top__demo__slide__inner -->
+						</div><!-- /.swiper-slide -->
+						<div class="swiper-slide p-top__demo__slide">
+							<div class="p-top__demo__slide__inner">
+								<div class="p-top__demo__slide__text-area">
+									<h3 class="p-top__demo__slide__head js-typing-slide">Dummy text</h3>
+									<p class="p-top__demo__slide__text p-top__text js-typing-slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+								</div><!-- /.p-top__demo__slide__text-area  -->
+								<div class="p-top__demo__slide__video">
+									<Modal videoSrc="/video/demo_video01.mp4" client:load />
+								</div><!-- /.p-top__demo__slide__video -->
+							</div><!-- /.p-top__demo__slide__inner -->
+						</div><!-- /.swiper-slide -->
+					</div><!-- /.swiper-wrapper  -->
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button swiper-button-prev">
+						<span class="swiper-button-arrow"></span>
+						<span class="swiper-button-circle"></span>
+					</div>
+					<div class="swiper-button swiper-button-next">
+						<span class="swiper-button-arrow"></span>
+						<span class="swiper-button-circle"></span>
+					</div>
+				</div><!-- /.swiper -->
+			</div><!-- /.l-inner -->
+		</section><!-- /.p-top__demo -->
+
+		<section class="l-section p-top__products" id="products">
+			<div class="l-inner">
+				<div class="p-top__products__block">
+					<h2 class="p-top__head p-top__products__head u-color-blue js-typing">Products</h2>
+					<ul class="p-top__products__list">
+						<li class="p-top__products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-top__products__list__item__head js-typing">qulacs-gui</h3>
+							<p class="p-top__products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+						<li class="p-top__products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-top__products__list__item__head js-typing">scikit-qulacs</h3>
+							<p class="p-top__products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+						<li class="p-top__products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-top__products__list__item__head js-typing">qulacs</h3>
+							<p class="p-top__products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+					</ul>
+					<div class="c-button-area p-top__products__button-area">
+						<a href="products" class="c-button --center p-top__products__button">
+							<span class="c-button__text">See all products</span>
+							<span class="c-button__circle01"></span>
+							<span class="c-button__circle02"></span>
+						</a>
+					</div><!-- /.c-button-area  -->
+				</div><!-- /.p-top__products__block -->
+			</div><!-- /.l-inner -->
+		</section><!-- /.p-top__products -->
+
+		<section class="l-section p-top__community" id="community">
+			<div class="l-inner">
+				<h2 class="p-top__head u-color-red js-typing">Community</h2>
+				<ul class="p-top__community__list">
+					<li class="p-top__community__list__item">
+						<a href="https://github.com/oqtopus-team/" target="_blank">
+							<Image src={communityLogoGithub} alt="GitHub" class="p-top__community__list__item__img --github" />						
+						</a>
+					</li>
+					<li class="p-top__community__list__item">
+						<a href="https://oqtopus.slack.com/" target="_blank">
+							<Image src={communityLogoSlack} alt="slack" class="p-top__community__list__item__img --slack" />						
+						</a>
+					</li>
+				</ul>	
+			</div><!-- /l-inner -->
+		</section><!-- /.p-top__community -->
+	</div><!-- /.p-top -->
 </Layout>
+
+<style lang="scss" define:vars={{ roadmapBgPc: `url(${roadmapBackgroundPc.src})`, roadmapBgSp: `url(${roadmapBackgroundSp.src})`, arrow: `url(${arrow.src})`, sliderArrowNext: `url(${sliderArrowNext.src})`, sliderArrowPrev: `url(${sliderArrowPrev.src})` }}>
+	// スライダー部分のcssのみ/styles/_swiper_custom.scss にあります
+	.p-top {
+		&__head {
+			font-size: 4.5rem;
+			font-weight: 500;
+			letter-spacing: 0.04em;
+			line-height: 1.1;
+			@include m.mq() {
+				font-size: 6.6rem;
+			}
+			@include m.mq() {
+				font-size: 5rem;
+			}
+		}
+		&__sub-head {
+			font-size: 2.5rem;
+			font-weight: 500;
+			line-height: 1.4;
+			@include m.mq() {
+				font-size: 3.3rem;
+				line-height: 1.6;
+			}
+			@include m.mq(tablet) {
+				font-size: 2.5rem;
+			}
+		}
+		&__large-text {
+			font-size: 2rem;
+			font-weight: 500;
+			line-height: 1.5;
+			@include m.mq() {
+				font-size: 2.6rem;
+				letter-spacing: 0.04em;
+			}
+			@include m.mq(tablet) {
+				font-size: 2rem;
+			}
+			.underline {
+				border-bottom: 1px solid;
+				line-height: 2;
+			}
+		}
+		&__text + &__text {
+			margin-top: 2.3rem;
+			@include m.mq() {
+				margin-top: 3rem;
+			}
+			@include m.mq(tablet) {
+				margin-top: 1.9rem;
+			}
+		}
+		&__list {
+			&__item {
+				position: relative;
+				text-indent: -1em;
+				padding-left: 1em;
+				&::before {
+					content: "・";
+				}
+			}
+		}
+		&__number-list {
+			&__item {
+				position: relative;
+				padding-left: 1em;
+				span {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+		&__main-visual {
+			padding-top: 1.4rem;
+			z-index: 1;
+			@include m.mq() {
+				padding-top: 17rem;
+			}
+			@include m.mq(tablet) {
+				padding-top: 12rem;
+			}
+			&__bg {
+				position: relative;
+				width: 56%;
+				z-index: 2;
+				@include m.mq() {
+					min-width: 60rem;
+					width: 46%;
+				}
+				@include m.mq(tablet) {
+					min-width: 40rem;
+				}
+			}
+			&__head {
+				position: absolute;
+				top: 16.5rem;
+				right: 2%;
+				left: 0;
+				font-size: 5.9rem;
+				line-height: 1.4;
+				letter-spacing: 0.1em;
+				text-align: right;
+				z-index: 1;
+				@include m.mq() {
+					top: 20%;
+					font-size: 22.5rem;
+					line-height: 1.55;
+				}
+				@include m.mq(tablet) {
+					top: 21.4%;
+					font-size: 16.9rem;
+				}
+			}
+			&__text {
+				display: inline-block;
+				&.--text01 {
+					width: 21rem;
+					@include m.mq() {
+						width: 81rem;
+					}
+					@include m.mq(tablet) {
+						width: 61rem;
+					}
+				}
+				&.--text02 {
+					width: 14.7rem;
+					margin-top: 3.6rem;
+					padding-left: 0.3rem;
+					@include m.mq() {
+						width: 56.7rem;
+						margin-top: 17.6rem;
+						padding-left: 1.7rem;
+					}
+					@include m.mq(tablet) {
+						width: 42.3rem;
+						margin-top: 13.2rem;
+						padding-left: 1.4rem;
+					}
+				}
+				&.--text03 {
+					width: 31.6rem;
+					margin-top: 5.1rem;
+					padding-left: 0.2rem;
+					@include m.mq() {
+						width: 121.2rem;
+						margin-top: 19.2rem;
+						padding-left: 1rem;
+					}
+					@include m.mq(tablet) {
+						width: 91rem;
+						margin-top: 14.5rem;
+						padding-left: 0.7rem;
+					}
+				}
+			}
+		}
+		&__mission {
+			margin-top: -11rem;
+			padding-top: 9rem;
+			z-index: 2;
+			@include m.mq() {
+				margin-top: -44.3rem;
+				padding-top: 19rem;
+			}
+			@include m.mq(tablet) {
+				margin-top: -23.7rem;
+				padding-top: 15rem;
+			}
+			&__block {
+				position: relative;
+				@include m.mq() {
+					border-radius: 1.5rem;
+				}
+			}
+			&__bg {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background-color: var.$white;
+				border-radius: 0.8rem;
+				z-index: 1;
+				@include m.mq() {
+					border-radius: 1.5rem;
+				}
+			}
+			&__contents {
+				position: relative;
+				padding: 6.3rem 2.6rem 5.3rem;
+				z-index: 2;
+				@include m.mq() {
+					padding: 6.1rem 7.9rem 6.8rem;
+				}
+				@include m.mq(tablet) {
+					padding: 4.9rem 6rem 4.9rem;
+				}
+			}
+			&__animation {
+				position: absolute;
+				top: -12.8rem;
+				right: 2.2rem;
+				width: 24rem;
+				@include m.mq() {
+					top: -27.2rem;
+					right: 1rem;
+					width: 57rem;
+				}
+				@include m.mq(tablet) {
+					top: -20.4rem;
+					right: 0.6rem;
+					width: 43rem;
+				}
+			}
+			&__text {
+				margin-top: 1.7rem;
+				font-size: 2.2rem;
+				font-weight: 500;
+				letter-spacing: 0.04em;
+				line-height: 1.4;
+				text-align: justify;
+				word-break:break-all;
+				@include m.mq() {
+					margin-top: 2.7rem;
+					font-size: 3.3rem;
+					line-height: 1.45;
+				}
+				@include m.mq(tablet) {
+					margin-top: 1.7rem;
+					font-size: 2.5rem;
+				}
+			}
+			&__note {
+				margin-top: 1.3rem;
+				line-height: 1.8;
+				@include m.mq() {
+					width: calc(100% - 290px);
+					margin-top: 1.6rem;
+					font-size: 2.0rem;
+					line-height: 1.7;
+				}
+				@include m.mq(tablet) {
+					width: calc(100% - 210px);
+					margin-top: 1.1rem;
+					font-size: 1.5rem;
+				}
+			}
+			&__button-area {
+				margin-top: 5.3rem;
+				@include m.mq() {
+					margin-top: 0;
+					position: absolute;
+					bottom: 8rem;
+					right: 8rem;
+				}
+				@include m.mq(tablet) {
+					bottom: 6rem;
+        	right: 6rem;
+				} 
+			}
+		}
+		&__about {
+			padding-top: 9rem;
+			@include m.mq() {
+				padding-top: 19rem;
+			}
+			@include m.mq(tablet) {
+				padding-top: 15rem;
+			}
+			&__head {
+				margin-bottom: 5.3rem;
+				@include m.mq() {
+					margin-bottom: 8.2rem;
+				}
+				@include m.mq(tablet) {
+					margin-bottom: 5.5rem;
+				}
+			}
+			&__sub-head {
+				margin-bottom: 4rem;
+				@include m.mq() {
+					margin-bottom: 5.8rem;
+				}
+				@include m.mq(tablet) {
+					margin-bottom: 3.8rem;
+				}
+			}
+			&__large-text {
+				margin-bottom: 4rem;
+				@include m.mq() {
+					margin-bottom: 1rem;
+				}
+				@include m.mq(tablet) {
+					margin-bottom: 0.7rem;
+				}
+			}
+			&__flexbox {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 4.7rem 4%;
+				@include m.mq() {
+					gap: 4.7rem 4%;
+				}
+				@include m.mq(tablet) {
+					gap: 3.5rem 4%;
+				}
+				&.--first {
+					margin-top: 4.7rem;
+					margin-bottom: 4.3rem;
+					@include m.mq() {
+						margin-top: 6.6rem;
+						margin-bottom: 6rem;
+					}
+					@include m.mq(tablet) {
+						margin-top: 4.4rem;
+						margin-bottom: 4.7rem;
+					}
+				}
+				&.--second {
+					margin-top: 1.4rem;
+					margin-bottom: 3.6rem;
+					@include m.mq() {
+						margin-top: 2rem;
+						margin-bottom: 5rem;
+					}
+					@include m.mq(tablet) {
+						margin-top: 1.7rem;
+						margin-bottom: 3.4rem;
+					}
+				}
+				&__block {
+					display: flex;
+					align-items: center;
+					@include m.mq() {
+						width: 48%;
+					}
+				}
+			}
+		}
+		&__software {
+			padding-top: 9rem;
+			@include m.mq() {
+				padding-top: 19rem;
+			}
+			@include m.mq(tablet) {
+				padding-top: 15rem;
+			}
+			&__chart {
+				width: 100vw;
+				padding-bottom: 1rem;
+				margin: 4.6rem 0 3.3rem -2.4rem;
+				overflow: auto;
+				@include m.mq() {
+					width: 100%;
+					padding-bottom: 0;
+					margin: 3.2rem 0 5.2rem;
+				}
+				@include m.mq(tablet) {
+					margin: 2.2rem 0 4rem;
+				}
+				img {
+					max-width: none;
+					width: 81.4rem;
+					margin-left: 2.4rem;
+					margin-right: 2.4rem;
+					@include m.mq() {
+						width: 100%;
+						margin: 0;
+					}
+				}
+			}
+			&__large-text {
+				margin-bottom: 1.4rem;
+				@include m.mq() {
+					margin-bottom: 1rem;
+				}
+				@include m.mq(tablet) {
+					margin-bottom: 0.7rem;
+				}
+			}
+		}
+		&__roadmap {
+			padding-top: 9rem;
+			@include m.mq() {
+				padding-top: 19rem;
+			}
+			@include m.mq(tablet) {
+				padding-top: 15rem;
+			}
+			&__block {
+				padding: 4rem 2.3rem 9.8rem;
+				background-image: var(--roadmapBgSp);
+				background-repeat: no-repeat;
+				background-size: 100% auto;
+				background-position: center top;
+				@include m.mq() {
+					background-image: var(--roadmapBgPc);
+					padding: 8.5rem 7.5rem 16.8rem;
+				}
+				@include m.mq(tablet) {
+					padding: 6rem 6rem 12.6rem;
+				}
+			}
+			&__slider {
+				margin-top: 9.2rem;
+				overflow: visible;
+				@include m.mq() {
+					margin-top: 13.7rem;
+				}
+				@include m.mq(tablet) {
+					margin-top: 10rem;
+				}
+			}
+			&__slide {
+				position: relative;
+				padding: 5.4rem 1.5rem 0;
+				// border-top: 0.4rem solid var.$white;
+				@include m.mq() {
+					padding: 5.8rem 0.5rem 0;
+				}
+				@include m.mq(tablet) {
+					padding: 4.7rem 0 0;
+				}
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: calc(100% + 3rem);
+					height: 0.4rem;
+					background: var.$white;
+				}
+				&__link {
+					position: relative;
+					display: block;
+					&::before, &::after {
+						content: "";
+						display: block;
+						position: absolute;
+						top: -10.2rem;
+						left: -5.3rem;
+						width: 10rem;
+						height: 10rem;
+						transition: all 0.3s ease-out;
+						@include m.mq() {
+							top: -12.5rem;
+							left: -6.8rem;
+							width: 14rem;
+							height: 14rem;
+						}
+						@include m.mq(tablet) {
+							top: -11.5rem;
+							left: -6.7rem;
+							width: 14rem;
+							height: 14rem;
+						}
+
+					}
+					&::before {
+						background: radial-gradient(rgba(43, 43, 122, 1) 0%, rgba(5, 117, 191, 0.98) 17%, rgba(255, 255, 255, 0) 50%);
+						z-index: 1;
+						// transition-delay: 0.1s;
+						// transition-duration: 0.2s;
+					}
+					&::after {
+						opacity: 0;
+						background: radial-gradient(rgba(255, 255, 255, 1) 0%, rgba(5, 117, 191, 0.98) 17%, rgba(255, 255, 255, 0) 50%);
+						z-index: 2;
+					}
+					&:hover {
+						&::before {
+							opacity: 0;
+						}
+						&::after {
+							opacity: 1;
+						}
+					}
+
+				}
+				&__head {
+					font-size: 2.2rem;
+					font-weight: 500;
+					letter-spacing: 0.04em;
+					@include m.mq() {
+						font-size: 3.0rem;
+					}
+					@include m.mq(tablet) {
+						font-size: 2.2rem;
+					}
+				}
+				&__text {
+					margin-top: 0.4rem;
+				}
+				&__more {
+					position: relative;
+					display: inline-block;
+					margin: 0.7rem 0 0;
+					border-bottom: 0.1rem solid var.$white;
+					font-size: 1.2rem;
+					font-weight: 500;
+					letter-spacing: 0.04em;
+					line-height: 1;
+					@include m.mq() {
+						margin: 1.1rem 0 0;
+						font-size: 1.6rem;
+					}
+					@include m.mq(tablet) {
+						margin: 0.7rem 0 0;
+						font-size: 1.2rem;
+					}
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 0.3rem;
+						right: -3.3rem;
+						width: 2.6rem;
+						height: 0.8rem;
+						background: var(--arrow) no-repeat center/cover;
+						@include m.mq() {
+							top: 0.4rem;
+							right: -4.3rem;
+							width: 3.5rem;
+							height: 1.1rem;
+						}
+						@include m.mq(tablet) {
+							top: 0.3rem;
+							right: -3.1rem;
+							width: 2.5rem;
+							height: 0.7rem;
+						}
+					}
+				}
+				&__img {
+					width: 100%;
+					margin-top: 1.4rem;
+					@include m.mq() {
+						margin-top: 1.8rem;
+					}
+					@include m.mq(tablet) {
+						margin-top: 1.3rem;
+					}
+				}
+			}
+		}
+		&__demo {
+			padding-top: 9rem;
+			@include m.mq() {
+				padding-top: 19rem;
+			}
+			@include m.mq(tablet) {
+				padding-top: 15rem;
+			}
+			&__slider {
+				margin-top: 4.8rem;
+				padding-bottom: 6.8rem;
+				overflow: visible;
+				@include m.mq() {
+					max-width: 680px;
+					margin: 9rem auto 0;
+					padding-bottom: 11.2rem;
+				}
+				@include m.mq(tablet) {
+					max-width: 510px;
+					margin: 6.8rem auto 0;
+					padding-bottom: 8.5rem;
+				}
+			}
+			&__slide {
+				position: relative;
+				padding: 0 0.7rem;
+				transform: translateY(1rem);
+				transition: all 0.3s ease-out;
+				opacity: 0;
+				visibility: hidden;
+				z-index: 1;
+				@include m.mq() {
+					padding: 0;
+				}
+				&.swiper-slide-active, &.swiper-slide-next, &.swiper-slide-prev {
+					opacity: 1;
+					visibility: visible;
+				}
+				&__head {
+					margin-bottom: 0.4rem;
+					font-size: 2.2rem;
+					font-weight: 500;
+					letter-spacing: 0.04em;
+					@include m.mq() {
+						margin-bottom: 0.4rem;
+						font-size: 3.0rem;
+					}
+					@include m.mq(tablet) {
+						margin-bottom: 0.4rem;
+						font-size: 2.2rem;
+					}
+				}
+				&__inner {
+					opacity: 0.5;
+					transform: translateY(4rem);
+					transition: all 0.3s ease-out;
+					@include m.mq() {
+						transform: translateY(9rem) scale(0.8);
+					}
+				}
+				&__text-area {
+					opacity: 0;
+				}
+				&__img, &__video {
+					margin-top: 1.5rem;
+					@include m.mq() {
+						margin-top: 1.7rem;
+					}
+					@include m.mq(tablet) {
+						margin-top: 0.9rem;
+					}
+				}
+				&__video {
+					video {
+						width: 100%;
+					}
+				}
+
+				&.swiper-slide-active {
+					transform: translateY(0);
+					z-index: 2;
+				}
+				&.swiper-slide-active &__inner {
+					opacity: 1;
+					transform: translateY(0);
+				}
+				&.swiper-slide-active &__text-area {
+					opacity: 1;
+				}
+			}
+		}
+		&__products {
+			padding-top: 9rem;
+			@include m.mq() {
+				padding-top: 19rem;
+			}
+			@include m.mq(tablet) {
+				padding-top: 15rem;
+			}
+			&__block {
+				position: relative;
+				padding: 4.1rem 2.5rem 5.2rem;
+				background-color: var.$white;
+				border-radius: 0.8rem;
+				@include m.mq() {
+					padding: 8.4rem 7.8rem 6.7rem;
+					border-radius: 1.5rem;
+				}
+				@include m.mq(tablet) {
+					padding: 6rem 6rem 6rem;
+				}
+			}
+			&__list {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 5rem 0;
+				margin: 5.8rem 0 5.5rem;
+				color: var.$black;
+				@include m.mq() {
+					justify-content: space-between;
+					gap: 0;
+					margin: 8.8rem 0 0;
+				}
+				@include m.mq(tablet) {
+					margin: 6.8rem 0 0;
+				}
+				&__item {
+					width: 100%;
+					@include m.mq() {
+						width: 30.5%;
+					}
+					&__head {
+						margin-top: 0.9rem;
+						font-size: 2.2rem;
+						font-weight: 500;
+						letter-spacing: 0.04em;
+						@include m.mq() {
+							margin-top: 1.1rem;
+							font-size: 3.0rem;
+						}
+						@include m.mq(tablet) {
+							font-size: 2.2rem;
+						}
+					}
+					&__text {
+						margin-top: 1rem;
+						@include m.mq() {
+							margin-top: 0.7rem;							
+						}
+					}
+				}
+			}
+			&__button-area {
+				@include m.mq() {
+					position: absolute;
+					top: 10.6rem;
+					right: 8.2rem;
+				}
+				@include m.mq(tablet) {
+					top: 8rem;
+					right: 6rem;
+				}
+			}
+		}
+		&__community {
+			padding-top: 9rem;
+			@include m.mq() {
+				padding-top: 19rem;
+			}
+			@include m.mq(tablet) {
+				padding-top: 15rem;
+			}
+			&__list {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 5rem;
+				margin-top: 6rem;
+				@include m.mq() {
+					justify-content: center;
+					align-items: center;
+					gap: 14rem;
+					margin-top: 8rem;
+				}
+				@include m.mq(tablet) {
+					gap: 9rem;
+					margin-top: 6rem;
+				}
+				&__item {
+					width: 100%;
+					text-align: center;
+					@include m.mq() {
+						width: auto;
+					}
+					&__img {
+						&.--github {
+							width: 15rem;
+							@include m.mq() {
+								width: 22.8rem;
+							}
+							@include m.mq(tablet) {
+								width: 14.9rem;
+							}
+						}
+						&.--slack {
+							width: 15rem;
+							@include m.mq() {
+								width: 23rem;
+							}
+							@include m.mq(tablet) {
+								width: 14.9rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		.is-typing {
+			&::after {
+				content: "";
+				display: inline-block;
+				width: 0.4em;
+				height: 0.7em;
+				background-color: currentColor;
+				animation: blink .4s step-end infinite alternate;
+			}
+		}
+		@keyframes blink {
+			50% {
+				opacity: 0;		/*点滅風に見せる*/
+			}
+		}
+	}
+</style>
+
+<script>
+	import "../assets/js/top.js";
+</script>

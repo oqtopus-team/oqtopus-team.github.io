@@ -1,0 +1,199 @@
+@use "_mixin.scss" as m;
+@use "_var.scss" as var;
+
+// ボタン
+.c-button {
+  position: relative;
+  display: block;
+  width: 21rem;
+  padding: 0.9rem 0 1.2rem;
+  border-radius: 9999px;
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  color: var.$white;
+  text-align: center;
+  @include m.mq() {
+    width: 20rem;
+    font-size: 1.8rem;
+  }
+  @include m.mq(tablet) {
+    width: 15rem;
+    padding: 0.7rem 0 0.7rem;
+    font-size: 1.4rem;
+  }
+  &.--center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+  }
+  &::before {
+    top: -0.2rem;
+    left: 0rem;
+    background-color: var.$blue;
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+  &::after {
+    right: -0.2rem;
+    bottom: -0.2rem;
+    background-color: var.$red;
+    z-index: 1;
+  }
+  &__text {
+    position: relative;
+    z-index: 3;
+  }
+  &__circle01, &__circle02 {
+    position: absolute;
+    display: block;
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+    }
+    &::before {
+      background-color: var.$blue;
+      mix-blend-mode: multiply;
+      z-index: 2;
+    }
+    &::after {
+      background-color: var.$red;
+      z-index: 1;
+    }  
+  }
+  &__circle01 {
+    top: -3.3rem;
+    right: -3.3rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    @include m.mq(tablet) {
+      top: -2.3rem;
+      right: -2.1rem;
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+    &::before {
+      top: -0.2rem;
+      left: 0rem;
+    }
+    &::after {
+      right: -0.2rem;
+      bottom: -0.2rem;
+    }  
+  }
+  &__circle02 {
+    top: -3.9rem;
+    right: -5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    @include m.mq(tablet) {
+      top: -2.7rem;
+      right: -3.7rem;
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+    &::before {
+      top: -0.5rem;
+      left: 0.4rem;
+    }
+    &::after {
+      right: 0;
+      bottom: 0;
+    } 
+  }
+}
+
+// モーダルウィンドウ
+.c-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  &[data-state="open"] {
+    animation: modalOpen 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &[data-state="closed"] {
+    animation: modalClose 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &__thumbnail {
+    width: 100%;
+  }
+  &__contents {
+    position: relative;
+    max-width: 1080px;
+    width: 100%;
+    &[data-state="open"] {
+      animation: modalOpen 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }  
+    &[data-state="closed"] {
+      animation: modalClose 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    img, video {
+      width: 100%;
+    }
+  }
+  &__close-btn {
+    position: absolute;
+    top: -5rem;
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    outline: none;
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+      height: 0.4rem;
+      margin: auto;
+      background: var.$white;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @keyframes modalOpen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes modalClose {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}

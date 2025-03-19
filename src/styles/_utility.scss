@@ -1,0 +1,37 @@
+@use "_mixin.scss" as m;
+@use "_var.scss" as var;
+
+.u-color-black {
+  color: var.$black;
+}
+.u-color-white {
+  color: var.$white;
+}
+.u-color-blue {
+  color: var.$blue;
+}
+.u-color-red {
+  color: var.$red;
+}
+
+.u-font-source-serif {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.text-justify {
+  text-align: justify;
+}
+.text-cneter {
+  text-align: center;
+}
+
+.u-break-all {
+  word-break: break-all;
+}
+
+.u-mb10 {
+  margin-bottom: 1rem;
+}

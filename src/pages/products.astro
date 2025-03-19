@@ -1,0 +1,139 @@
+---
+import ProductsLayout from '../layouts/ProductsLayout.astro';
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import Modal from "../components/Modal";
+
+// images
+import productsImg01 from '../assets/img/top/products_img01.jpg';
+
+---
+
+<ProductsLayout title="Products">
+	<div class="p-products">
+		<section class="l-section p-products__section">
+			<div class="l-inner">
+				<h1 class="p-products__head p-products__head u-color-red">Products</h1>
+				<div class="p-products__block">
+					<ul class="p-products__list">
+						<li class="p-products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-products__list__item__head">qulacs-gui</h3>
+							<p class="p-products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+						<li class="p-products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-products__list__item__head">scikit-qulacs</h3>
+							<p class="p-products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+						<li class="p-products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-products__list__item__head">qulacs</h3>
+							<p class="p-products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+						<li class="p-products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-products__list__item__head">qulacs</h3>
+							<p class="p-products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+						<li class="p-products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-products__list__item__head">qulacs-gui</h3>
+							<p class="p-products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+						<li class="p-products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-products__list__item__head">scikit-qulacs</h3>
+							<p class="p-products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore incididunt ut labore</p>
+						</li>
+						<li class="p-products__list__item">
+							<Image src={productsImg01} alt="" />
+							<h3 class="p-products__list__item__head">qulacs</h3>
+							<p class="p-products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+						</li>
+					</ul>
+				</div><!-- /.p-products__block -->
+			</div><!-- /.l-inner -->
+		</section><!-- /.p-products__products -->
+
+	</div><!-- /.p-top -->
+</ProductsLayout>
+
+<style lang="scss">
+	.p-products {
+		&__head {
+			font-size: 4.5rem;
+			font-weight: 500;
+			letter-spacing: 0.04em;
+			line-height: 1.1;
+			@include m.mq() {
+				font-size: 6.6rem;
+			}
+			@include m.mq(tablet) {
+				font-size: 5.0rem;
+			}
+		}
+		&__block {
+			position: relative;
+			margin-top: 2.3rem;
+			padding: 4rem 2.5rem 4rem;
+			background-color: var.$white;
+			border-radius: 0.8rem;
+			@include m.mq() {
+				margin-top: 6rem;
+				padding: 8.4rem 7.8rem 8.4rem;
+				border-radius: 1.5rem;
+			}
+			@include m.mq(tablet) {
+				margin-top: 4.4rem;
+        padding: 9rem 4rem 9rem;
+			}
+		}
+		&__list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 5rem 0;
+			color: var.$black;
+			@include m.mq() {
+        gap: 8.3rem 4.25%;
+			}
+			@include m.mq(tablet) {
+				justify-content: space-between;
+        gap: 4.6rem 7%;
+			}
+			&__item {
+				width: 100%;
+				@include m.mq() {
+					width: 30.5%;
+				}
+				@include m.mq(tablet) {
+					width: 46.5%;
+				}
+				&__head {
+					margin-top: 0.9rem;
+					font-size: 2.2rem;
+					font-weight: 500;
+					letter-spacing: 0.04em;
+					@include m.mq() {
+						margin-top: 2.2rem;
+						font-size: 3.0rem;
+					}
+					@include m.mq(tablet) {
+						margin-top: 1.8rem;
+						font-size: 2.5rem;
+					}
+				}
+				&__text {
+					margin-top: 1rem;
+					@include m.mq() {
+						margin-top: 0.7rem;							
+					}
+					@include m.mq() {
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+</style>

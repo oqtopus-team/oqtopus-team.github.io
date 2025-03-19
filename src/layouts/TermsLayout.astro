@@ -1,0 +1,47 @@
+---
+import { getImage } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import '../styles/style.scss';
+import '../styles/terms.scss';
+
+// background-images
+import backgroundSpSrc from '../assets/img/common/bg_sp.png';
+const backgroundSp = await getImage({src: backgroundSpSrc});
+import backgroundPcSrc from '../assets/img/common/bg_pc.png';
+const backgroundPc = await getImage({src: backgroundPcSrc});
+import headCircleSrc from '../assets/img/common/head_circle.png';
+const headCircle = await getImage({src: headCircleSrc});
+
+const { frontmatter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={frontmatter.title}>
+	</head>
+	<body id="pageTop">
+		<div class="l-container">
+			<Header />
+			<main class="l-contents p-terms">
+				<div class="l-inner">
+					<h1 class="p-terms__head u-color-red"><Fragment set:html={frontmatter.title_h1} /></h1>
+					<div class="p-terms__contents">
+						<slot />
+					</div><!-- /.p-terms__contents  -->
+				</div><!-- /.l-inner  -->
+			</main>
+			<Footer />
+		</div><!-- /.l-container  -->
+	</body>
+</html>
+
+<style lang="scss" define:vars={{ bgSp: `url(${backgroundSp.src})`, bgPc: `url(${backgroundPc.src})`, headCircle: `url(${headCircle.src})` }}>
+</style>
+
+<script>
+	import "../assets/js/common.js";
+</script>

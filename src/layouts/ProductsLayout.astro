@@ -1,0 +1,39 @@
+---
+import { getImage } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import '../styles/style.scss';
+
+// background-images
+import backgroundSpSrc from '../assets/img/common/bg_sp.svg';
+const backgroundSp = await getImage({src: backgroundSpSrc});
+import backgroundPcSrc from '../assets/img/common/bg_pc.svg';
+const backgroundPc = await getImage({src: backgroundPcSrc});
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title}>
+	</head>
+	<body id="pageTop">
+		<div class="l-container">
+			<Header />
+			<main class="l-contents">
+				<slot />
+			</main>
+			<Footer />
+		</div><!-- /.l-container  -->
+	</body>
+</html>
+
+<style lang="scss" define:vars={{ bgSp: `url(${backgroundSp.src})`, bgPc: `url(${backgroundPc.src})` }}>
+</style>
+
+<script>
+	import "../assets/js/common.js";
+</script>

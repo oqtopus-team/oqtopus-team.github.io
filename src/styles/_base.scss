@@ -1,0 +1,49 @@
+@use "_mixin.scss" as m;
+@use "_var.scss" as var;
+
+html {
+  font-size: calc(100vw / 37.5);
+  @include m.mq() {
+    font-size: 62.5%;
+  }
+}
+body {
+  font-size: 1.4rem;
+  font-family: "Lexend", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  color: var.$white;
+  background: var.$black;
+  background: var(--bgSp) no-repeat center top/100% auto var.$black;
+  @include m.mq() {
+    background: var(--bgPc) no-repeat center top/100% auto var.$black;
+    font-size: 1.8rem;
+    line-height: 1.67;
+  }
+  @include m.mq(tablet) {
+    font-size: 1.4rem;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+} 
+
+.u-pc {
+  @include m.mq(sp) {
+    display: none !important;
+  }
+}
+.u-sp {
+  @include m.mq(pc) {
+    display: none !important;
+  }
+}

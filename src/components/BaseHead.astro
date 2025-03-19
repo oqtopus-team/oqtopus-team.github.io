@@ -1,0 +1,21 @@
+---
+const { title } = Astro.props
+const isTopPage = Astro.url.pathname === '/';
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>{title}{!isTopPage ? '｜' + import.meta.env.SITE_NAME : "" }</title>
+<meta name="description" content="">
+<meta property="og:url" content=`${Astro.url.origin}`>
+<meta property="og:type" content="website">
+<meta property="og:title" content=`${title}`>
+<meta property="og:description" content="">
+<meta property="og:image" content=`${Astro.url.origin}/img/ogp.jpg`>
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Source+Serif+4:opsz,wght@8..60,900&display=swap" rel="stylesheet">

@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
+
+// images
+import footerLogo from '../assets/img/common/footer_logo.svg';
+
+// background-images
+import footerBackgroundPcSrc from '../assets/img/common/footer_bg_pc.jpg';
+const footerBackgroundPc = await getImage({src: footerBackgroundPcSrc});
+import footerBackgroundSpSrc from '../assets/img/common/footer_bg_sp.jpg';
+const footerBackgroundSp = await getImage({src: footerBackgroundSpSrc});
+---
+
+<footer class="l-footer">
+  <div class="l-footer__inner l-inner">
+    <div class="l-footer__logo">
+      <Image src={footerLogo} alt="OQTOPUS Open Quantum Toolchain for OPerators & USers" />
+    </div><!-- /.l-footer__logo  -->
+    <p class="l-footer__copyright text-cneter">&copy;Quantum Cyberspace <br class="u-sp">with Networked Quantum Computer</p>
+    <nav class="l-footer__nav">
+      <ul class="l-footer__nav__list">
+        <li class="l-footer__nav__list__item">
+          <a href="/code-of-conduct">Code of Conduct</a>
+        </li>
+        <li class="l-footer__nav__list__item">
+          <a href="/security-policy">Security Policy</a>
+        </li>
+      </ul>
+    </nav>
+  </div><!-- /.l-footer__inner  -->
+</footer>	
+
+<style lang="scss" define:vars={{ footerBgPc: `url(${footerBackgroundPc.src})`, footerBgSp: `url(${footerBackgroundSp.src})` }}>
+	.l-footer {
+		padding: 6rem 0 9.5rem;
+		background: var(--footerBgSp) no-repeat center/cover;
+		@include m.mq() {
+			padding: 7rem 0 7rem;
+			background-image: var(--footerBgPc);
+		}
+		@include m.mq(tablet) {
+			padding: 5rem 0 5rem;
+		}
+		&__logo {
+			width: 25.6rem;
+			margin: auto;
+			@include m.mq() {
+				width: 34.6rem;
+			}
+			@include m.mq(tablet) {
+				width: 25.8rem;
+			}
+			img {
+				width: 100%;
+			}
+		}
+		&__copyright {
+			margin-top: 2.2rem;
+			@include m.mq() {
+				margin-top: 3.2rem;
+			}
+			@include m.mq(tablet) {
+				margin-top: 2.5rem;
+			}
+		}
+		&__nav {
+			&__list {
+				display: flex;
+				justify-content: center;
+				gap: 3rem;
+				margin-top: 2.4rem;
+				@include m.mq() {
+					gap: 4rem;
+				}
+				@include m.mq(tablet) {
+					gap: 3rem;
+					margin-top: 1.8rem;
+				}
+				&__item {
+					font-size: 1.6rem;
+					font-weight: 500;
+					letter-spacing: 0.04em;
+					line-height: 1;
+					border-bottom: 1px solid currentColor;
+					@include m.mq() {
+						font-size: 2.2rem;
+					}
+					@include m.mq(tablet) {
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+	}
+</style>

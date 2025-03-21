@@ -3,7 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 
 interface ModalProps {
   videoSrc: string;
-  image: string;
+  // image: string;
 }
 
 const Modal: React.FC<ModalProps> = ({ videoSrc }) => {

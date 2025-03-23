@@ -67,67 +67,107 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 			<div class="l-inner">
 				<h2 class="p-top__about__head p-top__head u-color-red js-typing">About OQTOPUS</h2>
 				<h3 class="p-top__about__sub-head p-top__sub-head js-typing">to open source all the system software needed <br>for quantum computers.</h3>
-				<p class="p-top__about__large-text p-top__large-text">Dummy text Dummy text Dummy text Dummy</p>
-				<ul class="p-top__list">
-					<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
-					<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-					<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
-				</ul>
-				<div class="p-top__about__flexbox --first">
-					<div class="p-top__about__flexbox__block">
-						<Image src={aboutImg01} alt="" />
-					</div><!-- /.p-top__about__flexbox__block -->
-					<div class="p-top__about__flexbox__block">
-						<Image src={aboutImg01} alt="" />
-					</div><!-- /.p-top__about__flexbox__block -->
-					<div class="p-top__about__flexbox__block">
-						<Image src={aboutImg01} alt="" />
-					</div><!-- /.p-top__about__flexbox__block -->
-					<div class="p-top__about__flexbox__block">
-						<ul class="p-top__list">
-							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
-							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
-							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
-							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
-						</ul>
-					</div><!-- /.p-top__about__flexbox__block -->
-				</div><!-- /.p-top__about__flexbox.--first -->
-				<p class="p-top__large-text">Dummy text Dummy text Dummy text Dummy</p>
-				<div class="p-top__about__flexbox --second">
-					<div class="p-top__about__flexbox__block">
-						<ul class="p-top__list">
-							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
-							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
-							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
-							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
-						</ul>
-					</div><!-- /.p-top__about__flexbox__block -->
-					<div class="p-top__about__flexbox__block">
-						<ul class="p-top__list">
-							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
-							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
-							<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
-							<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-							<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
-						</ul>
-					</div><!-- /.p-top__about__flexbox__block -->
-				</div><!-- /.p-top__about__flexbox -->
 
-				<p class="p-top__large-text u-break-all text-justify u-mb10"><span class="underline">To systemize a quantum computer, a variety of functions are required, <br class="u-pc">including the following features:</span>	</p>
-				<ul class="p-top__number-list">
-					<li class="p-top__number-list__item"><span>1.</span>Job Management and Scheduling: Quantum computers are expensive and, like supercomputers, are commonly shared by multiple users. Therefore, a mechanism for managing user jobs and scheduling execution timing is essential.</li>
-					<li class="p-top__number-list__item"><span>2.</span>Conversion and optimization of quantum programs: Programs created by users do not run directly on a quantum chip, and must be converted and optimized (equivalent to compiling on a conventional computer) according to the characteristics specific to the quantum chip.</li>
-					<li class="p-top__number-list__item"><span>3.</span>Calibration: Calibration of the microwave frequency is necessary to accurately control the quantum chip. The calibration process is a big part of quantum computer operations.</li>
-				</ul>
+				<div class="p-top__software__chart">
+					<Image src={softwareChart} alt= />
+				</div><!-- /.p-top__software__chart -->
+				<h4 class="p-top__software__large-text p-top__large-text u-break-all text-justify"><span class="underline">Each layer of OQTOPUS consists of the following software:</span></h4>
+				<p class="p-top__text">
+					[Front-end layer]<br>
+					■ QURI Parts OQTOPUS<br>
+					It converts user-written quantum programs into a generic format (OpenQASM3) and communicates with the cloud layer.	
+				</p>
+				<p class="p-top__text">
+					[Cloud layer]<br>
+					■ GUI<br>
+					Information such as the execution status and results of user-created quantum programs, as well as the accuracy of quantum chips, is provided through a Web screen.<br>
+					## OQTOPUS Cloud<br>
+					Responsible for data management functions for the entire system, as well as user management and job management.					
+				</p>
+				<p class="p-top__text">
+					[Backend layer]<br>
+					■ OQTOPUS Engine<br>
+					As an execution platform for quantum computation, it works with the cloud layer, Tranqu Server, and Device Gateway to execute quantum programs. It also performs various processes necessary for quantum computation, such as calculation of the expected value of the execution result and error suppression.					
+				</p>
+				<p class="p-top__text">
+					■ Tranqu<br>
+					It is a one-stop framework that supports multiple quantum programming libraries and quantum circuit transformation and optimization functions (transpilers).
+				</p>
+				<p class="p-top__text">
+					■ Tranqu Server<br>
+					It provides transpiler services using Tranqu and is used by OQTOPUS Engine.					
+				</p>
+				<p class="p-top__text">
+					[Operation]<br>
+					■ QDash<br>
+					It is a dashboard that executes calibration essential for operation as a workflow, and visualizes the history management of execution results.					
+				</p>
+
+				<div style="display: none;">
+					<p class="p-top__about__large-text p-top__large-text">Dummy text Dummy text Dummy text Dummy</p>
+					<ul class="p-top__list">
+						<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+						<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+						<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+					</ul>
+					<div class="p-top__about__flexbox --first">
+						<div class="p-top__about__flexbox__block">
+							<Image src={aboutImg01} alt="" />
+						</div><!-- /.p-top__about__flexbox__block -->
+						<div class="p-top__about__flexbox__block">
+							<Image src={aboutImg01} alt="" />
+						</div><!-- /.p-top__about__flexbox__block -->
+						<div class="p-top__about__flexbox__block">
+							<Image src={aboutImg01} alt="" />
+						</div><!-- /.p-top__about__flexbox__block -->
+						<div class="p-top__about__flexbox__block">
+							<ul class="p-top__list">
+								<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+								<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+								<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+								<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+								<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+								<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+							</ul>
+						</div><!-- /.p-top__about__flexbox__block -->
+					</div><!-- /.p-top__about__flexbox.--first -->
+					<p class="p-top__large-text">Dummy text Dummy text Dummy text Dummy</p>
+					<div class="p-top__about__flexbox --second">
+						<div class="p-top__about__flexbox__block">
+							<ul class="p-top__list">
+								<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+								<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+								<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+								<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+								<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+								<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+							</ul>
+						</div><!-- /.p-top__about__flexbox__block -->
+						<div class="p-top__about__flexbox__block">
+							<ul class="p-top__list">
+								<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+								<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+								<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+								<li class="p-top__list__item">Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor</li>
+								<li class="p-top__list__item">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+								<li class="p-top__list__item">quis nostrud exercitation ullamco laboris nisi ut liquip ex ea commodo consequat</li>
+							</ul>
+						</div><!-- /.p-top__about__flexbox__block -->
+					</div><!-- /.p-top__about__flexbox -->
+	
+					<p class="p-top__large-text u-break-all text-justify u-mb10"><span class="underline">To systemize a quantum computer, a variety of functions are required, <br class="u-pc">including the following features:</span>	</p>
+					<ul class="p-top__number-list">
+						<li class="p-top__number-list__item"><span>1.</span>Job Management and Scheduling: Quantum computers are expensive and, like supercomputers, are commonly shared by multiple users. Therefore, a mechanism for managing user jobs and scheduling execution timing is essential.</li>
+						<li class="p-top__number-list__item"><span>2.</span>Conversion and optimization of quantum programs: Programs created by users do not run directly on a quantum chip, and must be converted and optimized (equivalent to compiling on a conventional computer) according to the characteristics specific to the quantum chip.</li>
+						<li class="p-top__number-list__item"><span>3.</span>Calibration: Calibration of the microwave frequency is necessary to accurately control the quantum chip. The calibration process is a big part of quantum computer operations.</li>
+					</ul>
+				</div>
+
 			</div><!-- /.l-inner -->
 		</section><!-- /.p-top__about -->
 
-		<section class="l-section p-top__software" id="software">
+		<!--later -->
+		<section class="l-section p-top__software" id="software" style="display:none;">
 			<div class="l-inner">
 				<h2 class="p-top__head u-color-blue js-typing">Software stack</h2>
 				<div class="p-top__software__chart">
@@ -167,7 +207,7 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 			</div><!-- /.l-inner -->
 		</section><!-- /.p-top__software -->
 
-		<section class="l-section p-top__roadmap" id="roadmap">
+		<section class="l-section p-top__roadmap" id="roadmap" style="display:none;">
 			<div class="l-inner">
 				<div class="p-top__roadmap__block">
 					<h2 class="p-top__head js-typing">Roadmap</h2>
@@ -228,30 +268,9 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 						<div class="swiper-slide p-top__demo__slide">
 							<div class="p-top__demo__slide__inner">
 								<div class="p-top__demo__slide__text-area">
-									<h3 class="p-top__demo__slide__head js-typing-slide">Dummy text</h3>
-									<p class="p-top__demo__slide__text p-top__text js-typing-slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
-								</div><!-- /.p-top__demo__slide__text-area  -->
-								<div class="p-top__demo__slide__video">
-									<Modal videoSrc="/video/demo_video01.mp4" client:load />
-								</div><!-- /.p-top__demo__slide__video -->
-							</div><!-- /.p-top__demo__slide__inner -->
-						</div><!-- /.swiper-slide -->
-						<div class="swiper-slide p-top__demo__slide">
-							<div class="p-top__demo__slide__inner">
-								<div class="p-top__demo__slide__text-area">
-									<h3 class="p-top__demo__slide__head js-typing-slide">Dummy text</h3>
-									<p class="p-top__demo__slide__text p-top__text js-typing-slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
-								</div><!-- /.p-top__demo__slide__text-area  -->
-								<div class="p-top__demo__slide__video">
-									<Modal videoSrc="/video/demo_video01.mp4" client:load />
-								</div><!-- /.p-top__demo__slide__video -->
-							</div><!-- /.p-top__demo__slide__inner -->
-						</div><!-- /.swiper-slide -->
-						<div class="swiper-slide p-top__demo__slide">
-							<div class="p-top__demo__slide__inner">
-								<div class="p-top__demo__slide__text-area">
-									<h3 class="p-top__demo__slide__head js-typing-slide">Dummy text</h3>
-									<p class="p-top__demo__slide__text p-top__text js-typing-slide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+									<h3 class="p-top__demo__slide__head js-typing-slide">QDash</h3>
+									<p class="p-top__demo__slide__text p-top__text js-typing-slide">QDash is a web application that provides a user-friendly interface to manage and monitor the execution of qubit calibration workflows.
+									</p>
 								</div><!-- /.p-top__demo__slide__text-area  -->
 								<div class="p-top__demo__slide__video">
 									<Modal videoSrc="/video/demo_video01.mp4" client:load />
@@ -278,23 +297,33 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 					<h2 class="p-top__head p-top__products__head u-color-blue js-typing">Products</h2>
 					<ul class="p-top__products__list">
 						<li class="p-top__products__list__item">
+							<!--
 							<Image src={productsImg01} alt="" />
-							<h3 class="p-top__products__list__item__head js-typing">qulacs-gui</h3>
-							<p class="p-top__products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+							 -->
+							<h3 class="p-top__products__list__item__head js-typing">oqtopus-cloud</h3>
+							<p class="p-top__products__list__item__text">Open Quantum Toolchain for OPerators & USers (OQTOPUS) is a project that provides the architecture of cloud quantum computers as an open-source software (OSS).
+							</p>
 						</li>
 						<li class="p-top__products__list__item">
+							<!--
 							<Image src={productsImg01} alt="" />
-							<h3 class="p-top__products__list__item__head js-typing">scikit-qulacs</h3>
-							<p class="p-top__products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+							 -->
+							 <h3 class="p-top__products__list__item__head js-typing">oqtopus-frontend</h3>
+							<p class="p-top__products__list__item__text">The web-based frontend application for OQTOPUS.</p>
 						</li>
 						<li class="p-top__products__list__item">
+							<!--
 							<Image src={productsImg01} alt="" />
-							<h3 class="p-top__products__list__item__head js-typing">qulacs</h3>
-							<p class="p-top__products__list__item__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+							 -->
+							 <h3 class="p-top__products__list__item__head js-typing">tranqu</h3>
+							<p class="p-top__products__list__item__text">Tranqu: A one-stop framework for transpilers across multiple quantum programming libraries and formats for quantum circuits.</p>
 						</li>
 					</ul>
 					<div class="c-button-area p-top__products__button-area">
+						<!--
 						<a href="products" class="c-button --center p-top__products__button">
+						 -->
+						<a href="https://github.com/oqtopus-team" class="c-button --center p-top__products__button">
 							<span class="c-button__text">See all products</span>
 							<span class="c-button__circle01"></span>
 							<span class="c-button__circle02"></span>

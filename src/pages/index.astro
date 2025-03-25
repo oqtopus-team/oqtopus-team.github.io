@@ -268,7 +268,10 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 						<div class="swiper-slide p-top__demo__slide">
 							<div class="p-top__demo__slide__inner">
 								<div class="p-top__demo__slide__text-area">
-									<h3 class="p-top__demo__slide__head js-typing-slide">QDash</h3>
+									<div class="p-top__demo__slide__head-area">
+										<h3 class="p-top__demo__slide__head js-typing-slide">QDash</h3>
+										<a href="https://github.com/oqtopus-team/qdash" class="p-top__demo__slide__button">more</a>
+									</div><!-- /.p-top__demo__slide__head-area  -->
 									<p class="p-top__demo__slide__text p-top__text js-typing-slide">QDash is a web application that provides a user-friendly interface to manage and monitor the execution of qubit calibration workflows. </p>
 								</div><!-- /.p-top__demo__slide__text-area  -->
 								<div class="p-top__demo__slide__video">
@@ -279,7 +282,10 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 						<div class="swiper-slide p-top__demo__slide">
 							<div class="p-top__demo__slide__inner">
 								<div class="p-top__demo__slide__text-area">
-									<h3 class="p-top__demo__slide__head js-typing-slide">OQTOPUS Frontend</h3>
+									<div class="p-top__demo__slide__head-area">
+										<h3 class="p-top__demo__slide__head js-typing-slide">OQTOPUS Frontend</h3>
+										<a href="https://github.com/oqtopus-team/oqtopus-frontend" class="p-top__demo__slide__button">more</a>
+									</div><!-- /.p-top__demo__slide__head-area  -->
 									<p class="p-top__demo__slide__text p-top__text js-typing-slide">The web-based frontend application for OQTOPUS. </p>
 								</div><!-- /.p-top__demo__slide__text-area  -->
 								<div class="p-top__demo__slide__video">
@@ -313,6 +319,9 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 							<h3 class="p-top__products__list__item__head js-typing">oqtopus-cloud</h3>
 							<p class="p-top__products__list__item__text">Open Quantum Toolchain for OPerators & USers (OQTOPUS) is a project that provides the architecture of cloud quantum computers as an open-source software (OSS).
 							</p>
+							<div class="p-top__products__list__item__button-area">
+								<a href="https://github.com/oqtopus-team/oqtopus-cloud" class="c-small-button"><span class="c-small-button__text">more</span></a>								
+							</div>
 						</li>
 						<li class="p-top__products__list__item">
 							<!--
@@ -320,6 +329,9 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 							 -->
 							 <h3 class="p-top__products__list__item__head js-typing">oqtopus-frontend</h3>
 							<p class="p-top__products__list__item__text">The web-based frontend application for OQTOPUS.</p>
+							<div class="p-top__products__list__item__button-area">
+								<a href="https://github.com/oqtopus-team/oqtopus-frontend" class="c-small-button"><span class="c-small-button__text">more</span></a>								
+							</div>
 						</li>
 						<li class="p-top__products__list__item">
 							<!--
@@ -327,6 +339,9 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 							 -->
 							 <h3 class="p-top__products__list__item__head js-typing">tranqu</h3>
 							<p class="p-top__products__list__item__text">Tranqu: A one-stop framework for transpilers across multiple quantum programming libraries and formats for quantum circuits.</p>
+							<div class="p-top__products__list__item__button-area">
+								<a href="https://github.com/oqtopus-team/tranqu" class="c-small-button"><span class="c-small-button__text">more</span></a>								
+							</div>
 						</li>
 					</ul>
 					<div class="c-button-area p-top__products__button-area">
@@ -950,18 +965,38 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 					opacity: 1;
 					visibility: visible;
 				}
-				&__head {
+				&__head-area {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					gap: 0.4rem 1rem;
 					margin-bottom: 0.4rem;
+					@include m.mq() {
+						gap: 0.4rem 2rem;
+					}
+				}
+				&__head {
 					font-size: 2.2rem;
 					font-weight: 500;
 					letter-spacing: 0.04em;
 					@include m.mq() {
-						margin-bottom: 0.4rem;
 						font-size: 3.0rem;
 					}
 					@include m.mq(tablet) {
-						margin-bottom: 0.4rem;
 						font-size: 2.2rem;
+					}
+				}
+				&__button {
+					display: inline-block;
+					padding: 0.3rem 3.5rem 0.6rem 1.5rem;
+					font-size: 1.4rem;
+					border-radius: 9999px;
+					line-height: 1;
+					background:var(--arrow) no-repeat right 0.7rem top 48%/1.6rem auto var.$red;
+					@include m.mq() {
+						padding: 0.3rem 4rem 0.6rem 2rem;
+						background: var(--arrow) no-repeat right 1rem top 48%/2rem auto var.$red;
+						font-size: 1.6rem;
 					}
 				}
 				&__inner {
@@ -1039,9 +1074,11 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 					margin: 6.8rem 0 0;
 				}
 				&__item {
+					position: relative;
 					width: 100%;
 					@include m.mq() {
 						width: 30.5%;
+						padding-bottom: 6rem;
 					}
 					&__head {
 						margin-top: 0.9rem;
@@ -1062,10 +1099,25 @@ const sliderArrowPrev = await getImage({src: sliderArrowPrevSrc});
 							margin-top: 0.7rem;							
 						}
 					}
+					&__button-area {
+						display: flex;
+						justify-content: end;
+						margin-top: 2rem;
+						@include m.mq() {
+							position: absolute;
+							right: 0;
+							bottom: 0;
+							margin-top: 0;
+						}
+
+					}
 				}
 			}
 			&__button-area {
-				@include m.mq() {
+				@include m.mq(sp) {
+					margin-top: 10rem;
+				}
+				@include m.mq(pc) {
 					position: absolute;
 					top: 10.6rem;
 					right: 8.2rem;

@@ -229,14 +229,14 @@ export const demoSwiperConfig = {
     }
   },
 
-  on: {
-    init: function() {
-      demoSliderTyping();
-    },
-    slideChangeTransitionStart: function() {
-      demoSliderTyping();
-    }
-  }
+  // on: {
+  //   init: function() {
+  //     demoSliderTyping();
+  //   },
+  //   slideChangeTransitionStart: function() {
+  //     demoSliderTyping();
+  //   }
+  // }
   // And if we need scrollbar
   // scrollbar: {
   //   el: '.swiper-scrollbar',
